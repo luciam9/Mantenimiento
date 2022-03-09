@@ -1,5 +1,6 @@
 public class Fibonacci {
 
+    //Método que calcula la sucesión de fibonacci dado un número entero
     public int compute(int n){
 
         if(n<0){
