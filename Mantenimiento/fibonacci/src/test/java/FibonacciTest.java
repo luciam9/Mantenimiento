@@ -9,6 +9,7 @@ public class FibonacciTest {
 
     private Fibonacci fibonacci;
 
+    //método que se ejecuta antes de cada test, instancia el atributo fibonacci
     @BeforeEach
     public void setup(){
         fibonacci = new Fibonacci();
@@ -19,11 +20,13 @@ public class FibonacciTest {
         fibonacci = null;
     }
 
+    //Test que comprueba que se lanza una excepción si se inserta un número < 0
     @Test
     public void computeNegativeValueThrowsException(){
         assertThrows(RuntimeException.class, () -> fibonacci.compute(-1));
     }
 
+    //Test que comprueba el correcto funcionamiento de un número válido
     @Test
     public void computeValue0Returns0(){
 
@@ -33,6 +36,7 @@ public class FibonacciTest {
         assertEquals(expectedValue, resultValue);
     }
 
+    //Test que comprueba el correcto funcionamiento de un número válido
     @Test
     public void computeValue1Returns1(){
 
@@ -42,11 +46,12 @@ public class FibonacciTest {
         assertEquals(expectedValue, resultValue);
     }
 
+    //Test que comprueba el correcto funcionamiento de un número válido
     @Test
-    public void computeValue2Returns1(){
+    public void computeValue4Returns3(){
 
-        int expectedValue = 1;
-        int resultValue = fibonacci.compute(2);
+        int expectedValue = 3;
+        int resultValue = fibonacci.compute(4);
 
         assertEquals(expectedValue, resultValue);
     }
